@@ -44,6 +44,7 @@ environment.
 Stage 7: Deploy to Production - Deploy the application to a production server (e.g.,
 AWS EC2 instance).
 
+
 4. Configure the pipeline to send notification emails to a specified email address at the
 end of the test and security scan stages. The notification emails should include the status
 of the stage (success or failure), and logs as attachments.
