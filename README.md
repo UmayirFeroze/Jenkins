@@ -27,7 +27,7 @@ expected and run integration tests to ensure the different components of the
 application work together as expected. Could you specify test automation tools for
 this stage?
 
-Stage 3: Code Analysis - integrate a code analysis tool to analyze the code and ensure
+Stage 3: Code Analysis - Integrate a code analysis tool to analyze the code and ensure
 it meets industry standards. Research and select a tool to analyze your code using
 Jenkins.
 
