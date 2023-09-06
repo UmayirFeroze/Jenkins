@@ -13,7 +13,7 @@ required to specify or research a tool that can be used for that stage.
    
 3. Create a Jenkins job that will be responsible for running the pipeline. The job should
 be triggered automatically whenever a new commit is pushed to the GitHub  
-repository.
+repository. 
 
 4. Define a pipeline with 7 st ages, each stage should have a specific task to perform. You
 will need to provide a description of the tasks performed in each stage and a tool that
