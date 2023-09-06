@@ -12,7 +12,7 @@ required to specify or research a tool that can be used for that stage.
 1. Create a GitHub repository and configure it to be used with Jenkins.
    
 3. Create a Jenkins job that will be responsible for running the pipeline. The job should
-be triggered automatically whenever a new commit is pushed to the GitHub
+be triggered automatically whenever a new commit is pushed to the GitHub  
 repository.
 
 4. Define a pipeline with 7 stages, each stage should have a specific task to perform. You
