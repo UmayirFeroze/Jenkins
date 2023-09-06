@@ -17,7 +17,7 @@ repository.
 
 4. Define a pipeline with 7 stages, each stage should have a specific task to perform. You
 will need to provide a description of the tasks performed in each stage and a tool that
-could be used. The steps should include:
+could be used. The steps should include: 
 
 Stage 1: Build - Build the code using a build automation tool to compile and package
 your code. You need to specify at least one build automation tool e.g., Maven.
