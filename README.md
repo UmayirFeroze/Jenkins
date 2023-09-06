@@ -6,7 +6,7 @@
 In this assessment task, you will be required to create a Jenkins pipeline that integrates with
 GitHub. You will also be required to integrate email notifications to inform developers about
 build status and deployment events. Additionally, for each stage  of the pipeline, you will be
-required to specify or research a tool that can be used for that stage. 
+required to specify or research a tool that can be used for that stage.  
  
 ## Task Instructions
 1. Create a GitHub repository and configure it to be used with Jenkins.
