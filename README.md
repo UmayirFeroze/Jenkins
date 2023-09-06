@@ -1,7 +1,7 @@
 # Continuous Integration and Deployment with Jenkins and GitHub
 
 
-## This is an individual Credit task.  
+## This is an individual Credit task.   
 ## Overview
 In this assessment task, you will be required to create a Jenkins pipeline that integrates with
 GitHub. You will also be required to integrate email notifications to inform developers about
