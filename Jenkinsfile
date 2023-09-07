@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Executed: build automation tool (Maven)"
+                echo "Executed: build automation tool (Maven)" 
                 echo "Executed: sh 'mvn clean package'"
             }
         }
