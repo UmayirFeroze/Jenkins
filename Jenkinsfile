@@ -1,9 +1,23 @@
 pipeline {
     agent any
+    
+    triggers {
+        // Specify branches to build
+        //branch('main') 
+        githubPush()
+    }
+    
+    
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Build') {
             steps {
-                echo "Executed: build automation tool (Maven)" 
+                echo "Executed: build automation tool (Maven)"
                 echo "Executed: sh 'mvn clean package'"
             }
         }
@@ -11,6 +25,20 @@ pipeline {
             steps {
                 echo "Executed: Test automation tool (Selenium)"
                 echo "Executed: 'sh mvn test'"
+            }
+            post {
+                failure {
+                    emailext subject: 'Unit and Integration Tests Failed',
+                    body: 'Unit and Integration Tests stage failed. Check logs for details.',
+                    to: 'umayir10@gmail.com',
+                    attachLog: true
+                }
+                success {
+                    emailext subject: 'Unit and Integration Tests Passed',
+                    body: 'Unit and Integration Tests stage succeeded.',
+                    to: 'umayir10@gmail.com',
+                    attachLog: true
+                }
             }
         }
         stage('Code Analysis') {
@@ -30,6 +58,20 @@ pipeline {
                 echo "Deploy to your staging server (AWS EC2)"
                 echo "Executed: sh 'ansible-playbook deploy-staging.yml'"
             }
+            post {
+                failure {
+                    emailext subject: 'Security Scan Failed',
+                    body: 'Security Scan stage failed. Check logs for details.',
+                    to: 'umayir10@gmail.com',
+                    attachLog: true
+                }
+                success {
+                    emailext subject: 'Security Scan Passed',
+                    body: 'Security Scan stage succeeded.',
+                    to: 'umayir10@gmail.com',
+                    attachLog: true
+                }
+            }
         }
         stage('Integration Tests on Staging') {
             steps {
@@ -44,20 +86,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        failure {
-            mail to: "umayir10@gmail.com",
-            subject: "Pipeline Failure",
-            body: "Pipeline failed. Check logs for details."
-        }
-        success {
-            mail to: "umayir10@gmail.com",
-            subject: "Pipeline Success",
-            body: "Pipeline succeeded. Deployment complete."
-        }
-    }
-
 }
-
-   
