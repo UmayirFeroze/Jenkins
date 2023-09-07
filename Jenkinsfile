@@ -28,13 +28,13 @@ pipeline {
             }
             post {
                 failure {
-                    emailtext subject: 'Unit and Integration Tests Failed',
+                    emailext subject: 'Unit and Integration Tests Failed',
                     body: 'Unit and Integration Tests stage failed. Check logs for details.',
                     to: 'umayir10@gmail.com',
                     attachLog: true
                 }
                 success {
-                    emailtext subject: 'Unit and Integration Tests Passed',
+                    emailext subject: 'Unit and Integration Tests Passed',
                     body: 'Unit and Integration Tests stage succeeded.',
                     to: 'umayir10@gmail.com',
                     attachLog: true
@@ -60,13 +60,13 @@ pipeline {
             }
             post {
                 failure {
-                    emailtext subject: 'Security Scan Failed',
+                    emailext subject: 'Security Scan Failed',
                     body: 'Security Scan stage failed. Check logs for details.',
                     to: 'umayir10@gmail.com',
                     attachLog: true
                 }
                 success {
-                    emailtext subject: 'Security Scan Passed',
+                    emailext subject: 'Security Scan Passed',
                     body: 'Security Scan stage succeeded.',
                     to: 'umayir10@gmail.com',
                     attachLog: true
